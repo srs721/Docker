@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  web1:    
+    image: container11
+    container_name: container1
+    volumes:
+      - ./:/usr/src/vol
+    ports: 
+      - "6000:6000"
+    networks:
+      - my-network
+
+  web2:    
+    image: container12
+    container_name: container2
+    volumes:
+      - ./:/usr/src/vol
+    ports: 
+      - "7000:7000"
+    networks:
+      - my-network
+  
+networks:
+    my-network:
+      driver: bridge
